@@ -1,4 +1,4 @@
-package com.project.android.checkpoint
+package com.project.android.checkpoint.ui
 
 
 import android.arch.lifecycle.ViewModelProviders
@@ -8,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.project.android.checkpoint.R
+import com.project.android.checkpoint.adapter.GameAdapter
+import com.project.android.checkpoint.model.GameViewModel
 import kotlinx.android.synthetic.main.game_list.*
 
 /**
@@ -28,8 +31,6 @@ class FinishedFragment : Fragment() {
         games_list.adapter = adapter
 
         val gameViewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
-
-        adapter.swapGames(gameViewModel.getGames())
 
         super.onActivityCreated(savedInstanceState)
     }

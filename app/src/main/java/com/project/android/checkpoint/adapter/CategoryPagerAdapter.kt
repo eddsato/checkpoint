@@ -1,8 +1,11 @@
-package com.project.android.checkpoint
+package com.project.android.checkpoint.adapter
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import com.project.android.checkpoint.ui.BacklogFragment
+import com.project.android.checkpoint.ui.FinishedFragment
+import com.project.android.checkpoint.ui.PlayingFragment
 
 class CategoryPagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
     private val mTabTitles = arrayOf("BACKLOG", "PLAYING", "FINISHED")

@@ -1,8 +1,11 @@
-package com.project.android.checkpoint
+package com.project.android.checkpoint.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
+import com.project.android.checkpoint.R
+import com.project.android.checkpoint.adapter.CategoryPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar_main))
+
+        fab_add.setOnClickListener {
+            val intent = Intent(this, FormGameActivity::class.java)
+            startActivity(intent)
+        }
 
         val fragmentAdapter = CategoryPagerAdapter(supportFragmentManager)
         viewpager_main.adapter = fragmentAdapter

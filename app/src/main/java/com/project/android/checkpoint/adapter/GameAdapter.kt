@@ -1,9 +1,11 @@
-package com.project.android.checkpoint
+package com.project.android.checkpoint.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.project.android.checkpoint.R
+import com.project.android.checkpoint.model.Game
 import kotlinx.android.synthetic.main.game_item.view.*
 
 class GameAdapter : RecyclerView.Adapter<GameAdapter.GameHolder>() {
@@ -32,9 +34,6 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.GameHolder>() {
         fun bind(game: Game) = with(itemView) {
             tv_game_title.text = game.gameTitle
             tv_platform.text = game.plataform
-            tv_first_text_slot.text = game.playtime
-            tv_second_text_slot.text = game.rating
-            tv_third_text_slot.text = game.finishedDate
         }
     }
 }
