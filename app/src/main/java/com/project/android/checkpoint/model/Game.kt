@@ -6,9 +6,9 @@ import android.arch.persistence.room.PrimaryKey
 @Entity
 data class Game (
         @PrimaryKey(autoGenerate = true)
-        val id: Long = 0,
-        val gameTitle: String,
-        val plataform: String,
-        val genre: String,
-        val playingStatus: String
+        var id: Int = 0,
+        var gameTitle: String,
+        var plataform: String,
+        var genre: String,
+        var playingStatus: String
 )
