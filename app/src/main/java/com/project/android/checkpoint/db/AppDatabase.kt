@@ -8,7 +8,7 @@ import com.project.android.checkpoint.db.dao.GameDao
 import com.project.android.checkpoint.model.Game
 
 @Database(
-        version = 1, exportSchema = false, entities = [
+        version = 3, exportSchema = false, entities = [
             Game::class
         ]
 )

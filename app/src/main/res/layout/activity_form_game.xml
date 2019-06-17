@@ -26,7 +26,7 @@
         android:hint="Genre"/>
 
     <EditText
-        android:id="@+id/et_playing_status"
+        android:id="@+id/et_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Status"/>

@@ -1,55 +1,38 @@
 package com.project.android.checkpoint.ui
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.project.android.checkpoint.R
-import com.project.android.checkpoint.db.AppDatabase
-import com.project.android.checkpoint.db.dao.GameDao
-import com.project.android.checkpoint.model.Game
 import kotlinx.android.synthetic.main.activity_form_game.*
-import kotlin.concurrent.thread
 
 class FormGameActivity : AppCompatActivity() {
-
-    private lateinit var database: AppDatabase
-    private lateinit var gameDao: GameDao
+    companion object {
+        const val EXTRA_GAME_TITLE = "com.project.android.checkpoint.EXTRA_GAME_TITLE"
+        const val EXTRA_PLATAFORM = "com.project.android.checkpoint.PLATAFORM"
+        const val EXTRA_GENRE = "com.project.android.checkpoint.GENRE"
+        const val EXTRA_STATUS = "com.project.android.checkpoint.STATUS"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_game)
 
-        database = AppDatabase.getInstance(this)
-        gameDao = database.gameDao()
-
         bt_add.setOnClickListener {
-            addGame()
-            cleanForm()
+            saveGame()
         }
     }
 
-    private fun addGame() {
-        val gameTitle = et_game_title.text.toString()
-        val plataform = et_platform.text.toString()
-        val genre = et_genre.text.toString()
-        val playingStatus = et_playing_status.text.toString()
-
-        if (title.isBlank()) {
-            //Snackbar
+    private fun saveGame() {
+        val data = Intent().apply {
+            putExtra(EXTRA_GAME_TITLE, et_game_title.text.toString())
+            putExtra(EXTRA_PLATAFORM, et_platform.text.toString())
+            putExtra(EXTRA_GENRE, et_genre.text.toString())
+            putExtra(EXTRA_STATUS, et_status.text.toString())
         }
 
-        val game = Game(
-                gameTitle = gameTitle,
-                plataform = plataform,
-                genre = genre,
-                playingStatus = playingStatus)
-
-        thread { gameDao.insert(game) }
-    }
-
-    private fun cleanForm() {
-        et_game_title.setText("")
-        et_genre.setText("")
-        et_platform.setText("")
-        et_playing_status.setText("")
+        setResult(Activity.RESULT_OK, data)
+        finish()
     }
 }
