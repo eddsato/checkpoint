@@ -20,6 +20,7 @@
         android:id="@+id/tablayout_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         app:tabMode="fixed" />
 
     <RelativeLayout

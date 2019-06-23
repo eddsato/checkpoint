@@ -12,12 +12,12 @@ interface GameDao {
     @Insert
     fun insert(game: Game): Long
 
-    @Query("SELECT * FROM Game")
-    fun getAll(): LiveData<List<Game>>
+    @Query("SELECT * FROM Game WHERE status = :playingStatus")
+    fun getPlayingGames(playingStatus: String): LiveData<List<Game>>
 
-//    @Query("SELECT * FROM Game WHERE status = :backlogStatus")
-//    fun getBacklogGames(backlogStatus: String)
-//
-//    @Query("SELECT * FROM Game WHERE status = :finishedStatus")
-//    fun getFinishedGames(finishedStatus: String)
+    @Query("SELECT * FROM Game WHERE status = :backlogStatus")
+    fun getBacklogGames(backlogStatus: String): LiveData<List<Game>>
+
+    @Query("SELECT * FROM Game WHERE status = :finishedStatus")
+    fun getFinishedGames(finishedStatus: String): LiveData<List<Game>>
 }

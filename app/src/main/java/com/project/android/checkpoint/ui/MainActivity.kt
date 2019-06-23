@@ -1,6 +1,7 @@
 package com.project.android.checkpoint.ui
 
 import android.app.Activity
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -41,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        gameViewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
 
         if (requestCode == ADD_GAME_REQUEST && resultCode == Activity.RESULT_OK) {
             val newGame = Game(

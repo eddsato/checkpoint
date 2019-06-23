@@ -8,13 +8,23 @@ import com.project.android.checkpoint.repository.GameRepository
 class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     private var repository: GameRepository = GameRepository(application)
-    private var allGames: LiveData<List<Game>> = repository.getAllGames()
+    private var backlogGames: LiveData<List<Game>> = repository.getBacklogGames()
+    private var playingGames: LiveData<List<Game>> = repository.getPlayingGames()
+    private var finishedGames: LiveData<List<Game>> = repository.getFinishedGames()
 
     fun insert(game: Game) {
         repository.insert(game)
     }
 
-    fun getAllGames(): LiveData<List<Game>> {
-        return allGames
+    fun getBacklogGames(): LiveData<List<Game>> {
+        return backlogGames
+    }
+
+    fun getPlayingGames(): LiveData<List<Game>> {
+        return playingGames
+    }
+
+    fun getFinishedGames(): LiveData<List<Game>> {
+        return finishedGames
     }
 }

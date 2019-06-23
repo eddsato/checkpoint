@@ -36,7 +36,7 @@ class PlayingFragment : Fragment() {
         games_list.layoutManager = LinearLayoutManager(context)
         games_list.adapter = gameListAdapter
         gameViewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
-        gameViewModel.getAllGames().observe(this,
+        gameViewModel.getPlayingGames().observe(this,
                 Observer<List<Game>> {t -> gameListAdapter.swapGames(t!!) })
     }
 }
