@@ -1,4 +1,4 @@
-package com.project.android.checkpoint.ui
+package com.project.android.checkpoint.view.ui
 
 import android.app.Activity
 import android.content.Intent

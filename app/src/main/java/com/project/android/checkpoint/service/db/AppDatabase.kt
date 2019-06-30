@@ -1,14 +1,14 @@
-package com.project.android.checkpoint.db
+package com.project.android.checkpoint.service.db
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import com.project.android.checkpoint.db.dao.GameDao
-import com.project.android.checkpoint.model.Game
+import com.project.android.checkpoint.service.db.dao.GameDao
+import com.project.android.checkpoint.service.model.Game
 
 @Database(
-        version = 4, exportSchema = false, entities = [
+        version = 3, exportSchema = false, entities = [
             Game::class
         ]
 )

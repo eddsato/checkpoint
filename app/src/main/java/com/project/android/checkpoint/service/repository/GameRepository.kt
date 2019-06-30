@@ -1,11 +1,11 @@
-package com.project.android.checkpoint.repository
+package com.project.android.checkpoint.service.repository
 
 import android.app.Application
 import android.arch.lifecycle.LiveData
 import android.os.AsyncTask
-import com.project.android.checkpoint.db.AppDatabase
-import com.project.android.checkpoint.db.dao.GameDao
-import com.project.android.checkpoint.model.Game
+import com.project.android.checkpoint.service.db.AppDatabase
+import com.project.android.checkpoint.service.db.dao.GameDao
+import com.project.android.checkpoint.service.model.Game
 
 class GameRepository(application: Application) {
     private val BACKLOG_STATUS = "Backlog"

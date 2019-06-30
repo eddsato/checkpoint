@@ -1,4 +1,4 @@
-package com.project.android.checkpoint.model
+package com.project.android.checkpoint.service.model
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

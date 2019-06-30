@@ -1,9 +1,10 @@
-package com.project.android.checkpoint.model
+package com.project.android.checkpoint.viewmodel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
-import com.project.android.checkpoint.repository.GameRepository
+import com.project.android.checkpoint.service.repository.GameRepository
+import com.project.android.checkpoint.service.model.Game
 
 class GameViewModel(application: Application) : AndroidViewModel(application) {
 

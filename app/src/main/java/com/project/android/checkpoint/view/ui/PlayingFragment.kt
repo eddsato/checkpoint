@@ -1,4 +1,4 @@
-package com.project.android.checkpoint.ui
+package com.project.android.checkpoint.view.ui
 
 
 import android.arch.lifecycle.Observer
@@ -10,9 +10,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.project.android.checkpoint.R
-import com.project.android.checkpoint.adapter.GameAdapter
-import com.project.android.checkpoint.model.Game
-import com.project.android.checkpoint.model.GameViewModel
+import com.project.android.checkpoint.view.adapter.GameAdapter
+import com.project.android.checkpoint.service.model.Game
+import com.project.android.checkpoint.viewmodel.GameViewModel
 import kotlinx.android.synthetic.main.game_list.*
 
 /**
@@ -37,6 +37,6 @@ class PlayingFragment : Fragment() {
         games_list.adapter = gameListAdapter
         gameViewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
         gameViewModel.getPlayingGames().observe(this,
-                Observer<List<Game>> {t -> gameListAdapter.swapGames(t!!) })
+                Observer<List<Game>> { t -> gameListAdapter.swapGames(t!!) })
     }
 }

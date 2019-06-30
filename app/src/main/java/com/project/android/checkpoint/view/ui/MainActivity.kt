@@ -1,4 +1,4 @@
-package com.project.android.checkpoint.ui
+package com.project.android.checkpoint.view.ui
 
 import android.app.Activity
 import android.arch.lifecycle.ViewModelProviders
@@ -8,9 +8,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.widget.Toast
 import com.project.android.checkpoint.R
-import com.project.android.checkpoint.adapter.CategoryPagerAdapter
-import com.project.android.checkpoint.model.Game
-import com.project.android.checkpoint.model.GameViewModel
+import com.project.android.checkpoint.service.model.Game
+import com.project.android.checkpoint.view.adapter.CategoryPagerAdapter
+import com.project.android.checkpoint.viewmodel.GameViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

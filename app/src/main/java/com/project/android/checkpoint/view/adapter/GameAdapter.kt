@@ -1,11 +1,11 @@
-package com.project.android.checkpoint.adapter
+package com.project.android.checkpoint.view.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.project.android.checkpoint.R
-import com.project.android.checkpoint.model.Game
+import com.project.android.checkpoint.service.model.Game
 import kotlinx.android.synthetic.main.game_item.view.*
 
 class GameAdapter : RecyclerView.Adapter<GameAdapter.GameHolder>() {
